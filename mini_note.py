@@ -1,14 +1,8 @@
 # coding:utf-8
-from Tkinter import *
-from tkMessageBox import *
-from tkFileDialog import *
-import tkFileDialog
 import os
-
-# resolve UnicodeEncodeError
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from tkinter import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter.messagebox import showinfo
 
 file_name = ''
 
@@ -57,11 +51,11 @@ def save():
     try:
         with open(file_name, 'w') as f:
             msg = text_box.get(1.0, END)
-            print msg
+            print(msg)
             f.write(text_box.get(1.0, END))
         root.title('FileName: ' + os.path.basename(file_name))
-    except Exception,e:
-        print e.message
+    except Exception as e:
+        print(e.message)
         save_as()
 
 
@@ -101,7 +95,7 @@ def search():
 
     def gen_search():
         text_box.tag_add(1.0, END)
-        print entry1.get()
+        print(entry1.get())
 
     top_search = Toplevel(root)
     top_search.geometry('240x30+200+200')

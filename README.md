@@ -1,2 +1,4 @@
 # MiniNote
-A mini notepad by python
+A mini notepad by tkinter
+
+![](img.png)
